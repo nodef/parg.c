@@ -1,0 +1,22 @@
+{
+  "name": "parg.c",
+  "version": "1.0.3",
+  "description": "Parser for argv that works similarly to getopt; Jørgen Ibsen (2015).",
+  "keywords": [
+    "c",
+    "library",
+    "parser",
+    "getopt",
+    "argv"
+  ],
+  "homepage": "https://github.com/nodef/parg.c#readme",
+  "bugs": {
+    "url": "https://github.com/nodef/parg.c/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodef/parg.c.git"
+  },
+  "license": "MIT-0",
+  "main": "parg.h"
+}
