@@ -30,32 +30,52 @@ It is written by [Jørgen Ibsen](https://github.com/jibsen).
 
 [getopt]: https://en.wikipedia.org/wiki/Getopt
 
+<br>
+
 Installation
 ------------
 
 Run:
-```bash
+
+```sh
 $ npm i parg.c
 ```
 
 And then include `parg.h` as follows:
+
 ```c
+// main.c
+#define PARG_IMPLEMENTATION
 #include "node_modules/parg.c/parg.h"
+
+int main() { /* ... */ }
 ```
 
-You may also want to include `parg.c` as follows:
+And then compile with `clang` or `gcc` as usual.
+
+```bash
+$ clang main.c  # or, use gcc
+$ gcc   main.c
+```
+
+You may also use a simpler approach:
+
 ```c
-#ifndef __PARG_C__
-#define __PARG_C__
-#include "node_modules/parg.c/parg.c"
-#endif
+// main.c
+#define PARG_IMPLEMENTATION
+#include <parg.h>
+
+int main() { /* ... */ }
 ```
 
-This will include both the function declaration and their definitions into a single file.
+If you add the path `node_modules/parg.c` to your compiler's include paths.
 
-```c
-#include "node_modules/parg.c/parg.h"
+```bash
+$ clang -I./node_modules/parg.c main.c  # or, use gcc
+$ gcc   -I./node_modules/parg.c main.c
 ```
+
+<br>
 
 Usage
 -----
@@ -80,6 +100,7 @@ cmake --build .
 [doxygen]: http://www.doxygen.org/
 [CMake]: http://www.cmake.org/
 
+<br>
 
 Example
 -------
@@ -139,6 +160,7 @@ int main(int argc, char *argv[])
 }
 ~~~
 
+<br>
 
 Comparison to `getopt`
 ----------------------
@@ -201,6 +223,7 @@ In this case, `parg` returns '`?`' if no option match is found, and '`:`' if
 a match is found, but is missing a required argument, or has an extraneous
 argument.
 
+<br>
 
 Alternatives
 ------------
@@ -239,6 +262,6 @@ A few C++ command-line parsing libraries:
 <br>
 
 
+[![SRC](https://img.shields.io/badge/src-repo-green?logo=Org)](https://github.com/jibsen/parg)
 [![ORG](https://img.shields.io/badge/org-nodef-green?logo=Org)](https://nodef.github.io)
 ![](https://ga-beacon.deno.dev/G-RC63DPBH3P:SH3Eq-NoQ9mwgYeHWxu7cw/github.com/nodef/parg.c)
-[![SRC](https://img.shields.io/badge/src-repo-green?logo=Org)](https://github.com/jibsen/parg)

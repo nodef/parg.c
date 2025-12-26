@@ -1,9 +1,6 @@
-# Library files
-parg
-parg.h
-
-# Build directory
+# Build artifacts
 .build/
+*.exe
 
 # Logs
 logs
